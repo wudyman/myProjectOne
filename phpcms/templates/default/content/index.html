@@ -34,23 +34,6 @@
                 <script language="javascript" src="{APP_PATH}caches/poster_js/10.js"></script>
             </div>
         </div>
-        <div class="bk10"></div>
-        <div class="box">
-        		<h5>Í¼Æ¬ÐÂÎÅ</h5>
-          {pc:content  action="position" posid="12" thumb="1" order="listorder DESC" num="10"}
-            <ul class="content news-photo picbig">
-             {loop $data $r}
-            	<li>
-                    <div class="img-wrap">
-                        <a href="{$r[url]}" title="{$r[title]}"><img src="{thumb($r[thumb],110,0)}" title="{$r[title]}"/></a>
-                    </div>
-                    <a href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],20)}</a>
-                </li>
-                {/loop}
-            </ul>
-            {/pc}
-        </div>
-        <div class="bk10"></div>
         {loop subcat(0,0,0,$siteid) $r}
         {php $num++}
         <div class="box cat-area" {if $num%2!=0}style=" margin-right:10px"{/if}>
