@@ -39,16 +39,14 @@
         <div class="box cat-area" {if $num%2!=0}style=" margin-right:10px"{/if}>
         		<h5 class="title-1">{$r[catname]}<a href="{$r[url]}" class="more">¸ü¶à>></a></h5>
              <div class="content">
-             {pc:content  action="lists" catid="$r[catid]" order="updatetime DESC" thumb="1" num="1" return="info"}
-             {loop $info $v}
              	<p>
-             		<img src="{thumb($v[thumb],90,0)}" width="90" height="60"/>
-                    <strong><a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>{str_cut($v['title'],28)}</a></strong><br />{str_cut($v['description'],100)}
+                <a href="{$r[url]}" target="_blank"><img  src="{$r[image]}" width="90" height="60" alt="{$r[catname]}" /></a>
+                {php $k=string2array($r['setting'])}
+                <strong><a href="{$r[url]}" target="_blank" title="{$k[meta_title]}" {title_style($r[style])}>{str_cut($k[meta_title],28)}</a></strong><br />{str_cut($k[meta_description],100)}
                 </p>
-              {/loop}
               {/pc}                
                 <div class="bk15 hr"></div>
-                {pc:content action="lists" catid="$r[catid]" num="5" order="id DESC" return="info"}
+                {pc:content action="lists" catid="$r[catid]" num="10" order="id DESC" return="info"}
 
                 <ul class="list lh24 f14">
                 {loop $info $v}
