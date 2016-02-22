@@ -51,16 +51,18 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .header .banner{ overflow:hidden;zoom:1;_float:right; text-align:right;	}
 
 /* µ¼º½ */
-.header .nav-bar{clear:both; height:33px}
-.header .nav-bar,.header .nav-bar map,.header .nav-site,.header .nav-site li.line,.header .subnav{background: url(../images/v9/nav.png) no-repeat}
+/*.header .nav-bar{clear:both; height:33px}*/
+.header .nav{ float:left;height:33px}
+.header .nav-bar{height:33px}
+/*.header .nav-bar,.header .nav-bar map,.header .nav-site,.header .nav-site li.line,.header .subnav{background: url(../images/v9/nav.png) no-repeat}*/
 .header .nav-bar map{background-position: right -130px; display:block}
 .header .nav-site{height:33px;background-position: left -65px;background-repeat: repeat-x; margin:0 5px; padding-left:5px;}
-.header .nav-site li{float:left; height:33px; line-height:33px; padding:0 15px; }
+.header .nav-site li{float:left; height:33px; line-height:33px; padding:0 5px; }
 .header .nav-site li a{color:#666666; font-size:14px; font-weight:700;*display:block}
-.header .nav-site li.line{background-position: 2px -215px; padding:0; width:10px; text-indent:-10000px}
-.header .subnav{ padding-left:16px; border-left:1px solid #d2dfed;border-right:1px solid #d2dfed;background-position: left -33px;background-repeat: repeat-x; height:32px; line-height:32px}
+.header .nav-site li.line{background-position: 2px -215px ;padding:0; width:10px; text-indent:-10000px}
+.header .subnav{padding-left:16px; border-left:0px solid #d2dfed;border-right:0px solid #d2dfed;background-position: left -33px;background-repeat: repeat-x; height:32px; line-height:32px}
 .header .subnav a{ color:#666666}
-.header .subnav span{ padding:0 13px; color:#c8d8e9;}
+.header .subnav span{ padding:0 3px; color:#c8d8e9;}
 /* main style */
 .main{}
 .main .col-left{width:700px; margin-right:10px}

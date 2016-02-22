@@ -24,9 +24,9 @@
 </div>
 <div class="header">
 	<div class="logo"><a href="{siteurl($siteid)}/"><img src="{IMG_PATH}logo_pig.jpg" width="85" height="63" alt=""/></a></div>
-
-    <div class="banner"><script language="javascript" src="{APP_PATH}index.php?m=poster&c=index&a=show_poster&id=1"></script></div>
-    <div class="bk3"></div>
+    <!--<div class="banner"><script language="javascript" src="{APP_PATH}index.php?m=poster&c=index&a=show_poster&id=1"></script></div>-->
+    <!--<div class="bk3"></div>-->
+<div class="nav">
     <div class="nav-bar">
     	<map>
     	{pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
@@ -41,7 +41,6 @@
 		{php echo runhook('glogal_menu')}
         </map>
     </div> 
-	
 	{if $top_parentid}
     <div class="subnav">
 		{pc:content action="category" catid="$top_parentid" num="15" siteid="$siteid" order="listorder ASC"}
@@ -52,4 +51,9 @@
     </div>
 	{/if}
 </div>
+	<div class="bk3"></div>
+	<div class="bk3"></div>
+	<div class="bk3"></div>
+	<div class="bk3"></div>
+	<div class="bk3"></div>
 </div>
