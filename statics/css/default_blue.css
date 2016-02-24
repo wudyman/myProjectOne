@@ -1,4 +1,5 @@
-body{color:#444;background: #eee url(../images/v9/body-bg.png) repeat-y center}
+/*body{color:#444;background: #eee url(../images/v9/body-bg.png) repeat-y center}*/
+body{color:#444;}
 a{text-decoration:none; color:#444}
 a:hover{text-decoration:underline; color:#1E50A2}
 .blue,blue a,.box h5 a,.box h6 a,.box a.more,.crumbs a{ /*color:#004499*/}
@@ -11,7 +12,7 @@ input.date,input.endDate{background: #fff url(../images/admin_img/input_date.png
 .hr{background: url(../images/uline.gif) repeat-x center center;}
 .hr hr{display:none}
 .ib, .ib-li li, .ib-a a, .ib-span span,.btn,.btn input,.photo-hot li,.Article-Tool a ,.photo-list li,.photo-channel .photo-slide .change i,.photo-channel .tool .auto,.photo-channel .tool .up,.photo-channel .tool .next,.photo-cat .content h5 span.blue a,.submit{display:inline-block;zoom:1;*display:inline;}
-.body-top,.header,.header .logo{background: url(../images/v9/body-top.png) repeat-x left -115px;}
+.body-top,.header,.header .logo{/*background: url(../images/v9/body-top.png) repeat-x left -115px;*/}
 .body-top{height:26px; background-color:#eee; vertical-align:middle}
 .body-top .login{ float:right}
 .body-top .login span{ color:#CCC}
@@ -38,7 +39,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .header,.main,.footer{width:960px;margin:0 auto;}
 /* 头部 */
 .header{padding:10px 7px;background-position: left -142px}
-.header .logo{float:left;background-position: right -10px;background-repeat: no-repeat; padding:0 20px 0 10px; height:70px; text-align:center;*font-size:40px;}
+.header .logo{float:left;background-position: right -10px;background-repeat: no-repeat; padding:0 0px 0 0px; height:70px; text-align:center;*font-size:40px;}
 .header .logo a{display:table-cell;vertical-align:middle;text-align:center;*display:block; height:70px; float:left}
 .header .search{ float:left; width:360px;_width:auto; padding-left:20px; height:70px}
 .header .search .tab{ padding:3px 0}
@@ -78,6 +79,9 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .box h5.title-2 span.tab{float:right; padding-right:6px; color:#a4bcd6}
 .box h5.title-2 span.tab span{ color:#2064ae;cursor: hand;!important;cursor: pointer}
 .box a.more{ font-size:12px; font-family:"宋体"; margin-right:8px; font-weight:normal; position:absolute;top:0; *top:1px;_top:1px; right:0}
+.box .cate-more{padding:0 0 0 265px;}
+.box .cate-more-icon{background-image:url(../images/v9/icon_cate.png);background-repeat:no-repeat;}
+.box .cate-more-icon{padding:2px 22px 2px 0;background-position:right -89px;}
 .box .content{ padding:0 10px; overflow:auto}
 
 /* 默认幻灯片 */

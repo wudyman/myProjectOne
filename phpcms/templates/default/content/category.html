@@ -61,23 +61,33 @@
 	{loop subcat($catid) $v}
 	{php if($v['type']!=0) continue;}
         <div class="box cat-area" {if $j%2==1}style="margin-right:10px"{/if}>
-        		<h5 class="title-1">{$v[catname]}<a href="{$v[url]}" class="more">更多>></a></h5>
+        		<!--<h5 class="title-1">{$v[catname]}<a href="{$v[url]}" class="more">进入频道</a></h5>-->
+        		<h5 class="title-1"><a href="{$v[url]}">{$v[catname]}</a></h5>
              <div class="content">
+                {pc:content action="lists" catid="$v[catid]" num="1" order="id DESC"}
 				<p>
 						<a href="{$v[url]}" target="_blank"><img src="{$v[image]}" width="90" height="60"/></a>
+                                                <!--
 						{php $k=string2array($v['setting'])}
 						<strong><a href="{$v[url]}" target="_blank" title="{$k[meta_title]}"{title_style($v[style])}>{str_cut($k[meta_title], 30)}</a></strong><br />{str_cut($k[meta_description],116,'..')}
+                                                -->
+					{loop $data $v}
+						<strong><a href="{$v[url]}" target="_blank" title="{$v[title]}"{title_style($v[style])}>{str_cut($v[title], 30)}</a></strong><br />{str_cut($v[description],116,'..')}
+					{/loop}
 					</p>
+				{/pc}
                 
                 <div class="bk15 hr"></div>
                 <ul class="list  lh24 f14">
                 {pc:content action="lists" catid="$v[catid]" num="15" order="id DESC"}
+                {php $data=array_splice($data,1)} 
 					{loop $data $v}
 						<li><a href="{$v[url]}" target="_blank"{title_style($v[style])}>{$v[title]}</a></li>
 					{/loop}
 				{/pc}
                 </ul>
             </div>
+                <div class="cate-more"><a href="{$r[url]}" class="cate-more-icon">进入频道</a></div>
         </div>
         {if $j%2==0}<div class="bk10"></div>{/if}
 	{$j++}
