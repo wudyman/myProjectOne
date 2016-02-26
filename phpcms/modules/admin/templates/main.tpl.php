@@ -78,6 +78,7 @@ function addtext(data) {
 	</div>
 <?php }?>
 </div>
+<!--
 <div class="col-2 col-auto">
 	<h6><?php echo L('main_sysinfo')?></h6>
 	<div class="content">
@@ -110,6 +111,7 @@ function addtext(data) {
 	<?php echo L('main_serial_number')?><span id="phpcms_sn"></span> <br />
 	</div>
 </div>
+-->
     <div class="bk10"></div>
 </div>
 </body></html>
