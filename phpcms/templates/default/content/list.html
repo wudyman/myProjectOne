@@ -2,14 +2,18 @@
 <!--main-->
 <div class="main">
 	<div class="col-left">
-    	<div class="crumbs"><a href="{siteurl($siteid)}">首页</a><span> > </span>{catpos($catid)} 列表</div>
+    	<div class="crumbs"><a href="{siteurl($siteid)}">首页</a><span> > </span>{catpos($catid)}</div>
     	{pc:content action="lists" catid="$catid" num="25" order="id DESC" page="$page"}
-        <ul class="list lh24 f14">
+        <!--<ul class="list lh24 f14">-->
+        <div class="list lh24 f14">
 {loop $data $r}
-	<li><span class="rt">{date('Y-m-d H:i:s',$r[inputtime])}</span>·<a href="{$r[url]}" target="_blank"{title_style($r[style])}>{$r[title]}</a></li>
-	{if $n%5==0}<li class="bk20 hr"></li>{/if}
+	<!--<li><span class="rt">{date('Y-m-d H:i:s',$r[inputtime])}</span>·<a href="{$r[url]}" target="_blank"{title_style($r[style])}>{$r[title]}</a></li>-->
+	<a href="{$r[url]}" target="_blank"><img  src="{$r[thumb]}" width="90" height="60" alt="" /></a>
+	<strong><a href="{$r['url']}" target="_blank" title="{$r['title']}"{title_style($r[style])}>{str_cut($r['title'],100)}</a></strong><br />{str_cut($r['description'],175,' ...')}<span class="rt">{date('Y-m-d',$r[inputtime])}</span>
+	<div class="bk20 hr"></div>
 {/loop}
-        </ul>
+        <!--</ul>-->
+        </div>
         <div id="pages" class="text-c">{$pages}</div>
 {/pc}
   </div>

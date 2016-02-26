@@ -72,7 +72,7 @@
 						<strong><a href="{$v[url]}" target="_blank" title="{$k[meta_title]}"{title_style($v[style])}>{str_cut($k[meta_title], 30)}</a></strong><br />{str_cut($k[meta_description],116,'..')}
                                                 -->
 					{loop $data $v}
-						<strong><a href="{$v[url]}" target="_blank" title="{$v[title]}"{title_style($v[style])}>{str_cut($v[title], 30)}</a></strong><br />{str_cut($v[description],116,'..')}
+						<strong><a href="{$v[url]}" target="_blank" title="{$v[title]}"{title_style($v[style])}>{str_cut($v[title], 28)}</a></strong><br />{str_cut($v[description],100,'...')}
 					{/loop}
 					</p>
 				{/pc}
@@ -82,7 +82,7 @@
                 {pc:content action="lists" catid="$v[catid]" num="15" order="id DESC"}
                 {php $data=array_splice($data,1)} 
 					{loop $data $v}
-						<li><a href="{$v[url]}" target="_blank"{title_style($v[style])}>{$v[title]}</a></li>
+						<li><a href="{$v[url]}" target="_blank"{title_style($v[style])}>{str_cut($v['title'],40)}</a></li>
 					{/loop}
 				{/pc}
                 </ul>

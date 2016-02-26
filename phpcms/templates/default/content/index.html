@@ -48,7 +48,7 @@
                 <strong><a href="{$r[url]}" target="_blank" title="{$k[meta_title]}" {title_style($r[style])}>{str_cut($k[meta_title],28)}</a></strong><br />{str_cut($k[meta_description],100)}
                 -->
                 {loop $info $v}
-                <strong><a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>{str_cut($v['title'],28)}</a></strong><br />{str_cut($v['description'],100)}
+                <strong><a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>{str_cut($v['title'],28)}</a></strong><br />{str_cut($v['description'],100,'...')}
                 {/loop}
                 </p>
               {/pc}                
