@@ -11,7 +11,7 @@
       {if $r[thumb]}<p>{/if}
        
 	<!--<li><span class="rt">{date('Y-m-d H:i:s',$r[inputtime])}</span>¡¤<a href="{$r[url]}" target="_blank"{title_style($r[style])}>{$r[title]}</a></li>-->
-	<a href="{$r[url]}" target="_blank"><img  src="{$r[thumb]}" width="100" height="85" alt="" /></a>
+	{if $r[thumb]}<a href="{$r[url]}" target="_blank"><img  src="{$r[thumb]}" width="100" height="85" alt="" /></a>{/if}
 	<strong><a href="{$r['url']}" target="_blank" title="{$r['title']}"{title_style($r[style])}>{str_cut($r['title'],100)}</a></strong><br/>{str_cut($r['description'],175,' ...')}<br/><span class="rt">{date('Y-m-d',$r[inputtime])}</span>
        {if $r[thumb]}</p>{/if}
      </div>
