@@ -34,7 +34,19 @@
 			<li><a href="{siteurl($siteid)}"><span>Ê×Ò³</span></a></li>
 			{loop $data $r}
 			<li class="line">|</li>
+			{pc:content action="category" catid="$r[catid]" num="15" siteid="$siteid" order="listorder ASC"}
+			{php $cat_num=count($data)}
+			{if $cat_num>1}
 			<li><a href="{$r[url]}"><span>{$r[catname]}</span></a></li>
+			{/if}
+			{if $cat_num==1}
+			{loop $data $v}
+			<li><a href="{$v[url]}"><span>{$r[catname]}</span></a></li>
+			{/loop}
+			{/if}
+			{if $cat_num==0}
+			<li><a href="{$r[url]}"><span>{$r[catname]}</span></a></li>
+			{/if}
 			{/loop}
             </ul>
         {/pc}
@@ -44,9 +56,12 @@
 	{if $top_parentid}
     <div class="subnav">
 		{pc:content action="category" catid="$top_parentid" num="15" siteid="$siteid" order="listorder ASC"}
+		       {php $cat_num=count($data)}
+		       {if $cat_num>1}
 			{loop $data $r}
 			<a href="{$r[url]}">{$r[catname]}</a><span> | </span>
 			{/loop}
+			{/if}
         {/pc}
     </div>
 	{/if}
