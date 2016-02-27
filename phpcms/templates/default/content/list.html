@@ -5,14 +5,14 @@
     	<div class="crumbs"><a href="{siteurl($siteid)}">Ê×Ò³</a><span> > </span>{catpos($catid)}</div>
     	{pc:content action="lists" catid="$catid" num="20" order="id DESC" page="$page"}
         <!--<ul class="list lh24 f14">-->
-    <div class="cat-area" style="width:700px;">
+    <div class="list-area">
 {loop $data $r}
-      <div class="content" style="color:#777">
+      <div class="content">
       {if $r[thumb]}<p>{/if}
        
 	<!--<li><span class="rt">{date('Y-m-d H:i:s',$r[inputtime])}</span>¡¤<a href="{$r[url]}" target="_blank"{title_style($r[style])}>{$r[title]}</a></li>-->
-	<a href="{$r[url]}" target="_blank"><img  src="{$r[thumb]}" width="90" height="75" alt="" /></a>
-	<strong style="font-size:14px; color:#333"><a href="{$r['url']}" target="_blank" title="{$r['title']}"{title_style($r[style])}>{str_cut($r['title'],100)}</a></strong><br/>{str_cut($r['description'],175,' ...')}<span class="rt">{date('Y-m-d',$r[inputtime])}</span>
+	<a href="{$r[url]}" target="_blank"><img  src="{$r[thumb]}" width="100" height="85" alt="" /></a>
+	<strong><a href="{$r['url']}" target="_blank" title="{$r['title']}"{title_style($r[style])}>{str_cut($r['title'],100)}</a></strong><br/>{str_cut($r['description'],175,' ...')}<br/><span class="rt">{date('Y-m-d',$r[inputtime])}</span>
        {if $r[thumb]}</p>{/if}
      </div>
        <div class="bk20 hr"></div>
