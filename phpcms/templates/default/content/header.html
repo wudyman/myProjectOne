@@ -11,6 +11,15 @@
 <script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
 <script type="text/javascript" src="{JS_PATH}jquery.sgallery.js"></script>
 <script type="text/javascript" src="{JS_PATH}search_common.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?81707ba857122a92227346a3011f6484";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 </head>
 <body>
 <div class="body-top">
@@ -30,10 +39,20 @@
     <div class="nav-bar">
     	<map>
     	{pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
-        	<ul class="nav-site">
-			<li><a href="{siteurl($siteid)}"><span>Ê×Ò³</span></a></li>
+			<!--<li><a href="{siteurl($siteid)}"><span>Ê×Ò³</span></a></li>-->
+			<ul class="nav-site">
 			{loop $data $r}
+			{php $index++;}
 			<li class="line">|</li>
+			{if 5>=$index}
+			<li><a href="{$r[url]}"><span>{$r[catname]}</span></a></li>
+			{/if}
+			 {/loop}
+			 </ul>
+                     {php $data=array_splice($data,5)} 
+                     <ul class="nav-site">
+                     {loop $data $r}
+                     <li class="line">|</li>
 			{pc:content action="category" catid="$r[catid]" num="15" siteid="$siteid" order="listorder ASC"}
 			{php $cat_num=count($data)}
 			{if $cat_num>1}
@@ -48,16 +67,20 @@
 			<li><a href="{$r[url]}"><span>{$r[catname]}</span></a></li>
 			{/if}
 			{/loop}
-            </ul>
+			</ul>
+			
+			
         {/pc}
 		{php echo runhook('glogal_menu')}
         </map>
     </div> 
+    <!--
 	{if $top_parentid}
     <div class="subnav">
 		{pc:content action="category" catid="$top_parentid" num="15" siteid="$siteid" order="listorder ASC"}
 		       {php $cat_num=count($data)}
 		       {if $cat_num>1}
+		       <br/>
 			{loop $data $r}
 			<a href="{$r[url]}">{$r[catname]}</a><span> | </span>
 			{/loop}
@@ -65,6 +88,7 @@
         {/pc}
     </div>
 	{/if}
+	-->
 </div>
     <div class="bk3"></div>
 </div>
