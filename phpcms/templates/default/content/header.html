@@ -8,7 +8,7 @@
 <meta name="description" content="{$SEO['description']}">
 <link href="{CSS_PATH}reset.css" rel="stylesheet" type="text/css" />
 <link href="{CSS_PATH}default_blue.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript" src="{JS_PATH}jquery.sgallery.js"></script>
 <script type="text/javascript" src="{JS_PATH}search_common.js"></script>
 </head>
@@ -30,17 +30,18 @@
     <div class="nav-bar">
     	<map>
     	{pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
-			<!--<li><a href="{siteurl($siteid)}"><span>首页</span></a></li>-->
 			<ul class="nav-site">
+			<li class="line">|</li>
+			<li><a href="{siteurl($siteid)}"><span>网站首页</span></a></li>
 			{loop $data $r}
 			{php $index++;}
 			<li class="line">|</li>
-			{if 5>=$index}
+			{if 4>=$index}
 			<li><a href="{$r[url]}"><span>{$r[catname]}</span></a></li>
 			{/if}
 			 {/loop}
 			 </ul>
-                     {php $data=array_splice($data,5)} 
+                     {php $data=array_splice($data,4)} 
                      <ul class="nav-site">
                      {loop $data $r}
                      <li class="line">|</li>
@@ -94,5 +95,26 @@
     {/pc}
     </div>
     	{/if}
+    	<!--
+    <div class="col-auto">
+      <a data-type="13" data-tmpl="350x100" data-tmplid="212" data-rd="2" data-style="2" data-border="1" href="#"></a>
+    </div>
+    -->
     <div class="bk3"></div>
+    
+ <div class="duilian duilian_left">
+   <div class="duilian_con">
+   	 <a data-type="2" biz-keyword="充气娃娃 真人" data-tmpl="220x290" data-tmplid="9" data-rd="2" data-style="2" data-border="1" href="#"></a>
+   </div>
+   <a href="#" class="duilian_close">关闭</a>
+ </div>
+ <div class="duilian duilian_right">
+   <div class="duilian_con">
+     <a data-type="2" biz-keyword="性感情趣内衣睡衣 诱惑 露乳" data-tmpl="170x290" data-tmplid="9" data-rd="2" data-style="2" data-border="1" href="#"></a>
+   </div>
+   <a href="#" class="duilian_close">关闭</a>
+ </div>
+ <p style="height:1px;"></p>
 </div>
+
+
