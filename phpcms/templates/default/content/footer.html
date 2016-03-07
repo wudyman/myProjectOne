@@ -31,42 +31,6 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-<script type="text/javascript">
-    (function(win,doc){
-        var s = doc.createElement("script"), h = doc.getElementsByTagName("head")[0];
-        if (!win.alimamatk_show) {
-            s.charset = "gbk";
-            s.async = true;
-            s.src = "http://a.alimama.cn/tkapi.js";
-            h.insertBefore(s, h.firstChild);
-        };
-        var o = {
-            pid: "mm_114293143_12912044_49576009",/*推广单元ID，用于区分不同的推广渠道*/
-            appkey: "",/*通过TOP平台申请的appkey，设置后引导成交会关联appkey*/
-            unid: "",/*自定义统计字段*/
-            type: "click" /* click 组件的入口标志 （使用click组件必设）*/
-        };
-        win.alimamatk_onload = win.alimamatk_onload || [];
-        win.alimamatk_onload.push(o);
-    })(window,document);
-</script>
 
-<script type="text/javascript">
-(function(){
- var duilian = $("div.duilian");
- var duilian_close = $("a.duilian_close");
- var window_w = $(window).width();
- if(window_w>1000){duilian.show();}
- $(window).scroll(function(){
-  var scrollTop = $(window).scrollTop();
-  duilian.stop().animate({top:scrollTop+150});
- });
- duilian_close.click(function(){
-  $(this).parent().hide();
-  return false;
- });
-
-})();
-</script>
 </body>
 </html>
