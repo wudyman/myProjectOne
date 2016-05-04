@@ -136,8 +136,13 @@ function content_strip($content,$ishow=1) {
    $content = preg_replace('/<img[^>]*src=[\'"]?([^>\'"\s]*)[\'"]?[^>]*>/ie', "wap_img('$1',$ishow)", $content);
       
    //匹配替换过的图片
+     
+    //替换视频iframe 宽度
+     $content = preg_replace('/<[\s]*</', '<', $content);//去掉多余的“<”
+     $content = preg_replace_callback('/<iframe[^>]*width="([\d]{3})"[^>]*>/', "wap_iframe", $content);
+
       
-   $content = strip_tags($content,'<b><br><img><p><div><a>');
+   $content = strip_tags($content,'<b><br><img><p><div><a><embed><iframe>');
    return $content;
 }
 
@@ -151,6 +156,16 @@ function wap_img($url,$ishow) {
 	if($ishow==1) $show_tips = '<br><a href="'.$show_big.'">浏览大图</a>';
 	return '<img src="'.thumb($url,$wap_setting['thumb_w'],$wap_setting['thumb_h']).'">'.$show_tips;
 }
+/**
+ * 视频iframe过滤替换
+ */
+function wap_iframe($matches)
+{
+$content = preg_replace('[width="[\d]{3}"]', 'width=350', $matches[0]);
+$content = preg_replace('[height="[\d]{3}"]', 'height=340', $content);
+return $content;
+}
+
 
 function strip_selected_tags($text) {
     $tags = array('em','font','h1','h2','h3','h4','h5','h6','hr','i','ins','li','ol','p','pre','small','span','strike','strong','sub','sup','table','tbody','td','tfoot','th','thead','tr','tt','u','div','span');

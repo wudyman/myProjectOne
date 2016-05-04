@@ -5,7 +5,7 @@
 	<h2><a href="{list_url($type['typeid'])}" class="cat">{$type['typename']}</a></h2>
 	<div>
 	{loop $info $v}
-	<a href="{show_url($v[catid],$v[id],$type['typeid'])}" title="{$v['title']}">{str_cut($v['title'],26,'')}</a><br/>
+	<a href="{show_url($v[catid],$v[id],$type['typeid'])}" title="{$v['title']}">{str_cut($v['title'],32,'...')}</a><br/>
 	{/loop}
 	</div>
 	{/pc}

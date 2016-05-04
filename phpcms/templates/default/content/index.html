@@ -39,20 +39,22 @@
         {if $num<9}
         <div class="box cat-area" {if $num%2!=0}style=" margin-right:10px"{/if}>
         		<!--<h5 class="title-1">{$r[catname]}<a href="{$r[url]}" class="more cate-icon">进入频道</a></h5>-->
-        		<h5 class="title-1"><a href="{$r[url]}">{$r[catname]}</a></h5>
-             <div class="content">
+                {pc:content action="category" catid="$r[catid]" num="1" siteid="$siteid" order="listorder ASC"}
+                            {loop $data $v}
+                {php $catUrl=$v[url]}
+        	            <h5 class="title-1"><a href="{$v[url]}">{$r[catname]}</a></h5>
+                  <div class="content">              
+                  <p>
+                <a href="{$v[url]}" target="_blank"><img  src="{$r[image]}" width="90" height="60" alt="{$r[catname]}" /></a>
+                            {/loop}
+                {/pc}
                 {pc:content action="lists" catid="$r[catid]" num="1" order="id DESC" return="info"} 
-             	<p>
-                <a href="{$r[url]}" target="_blank"><img  src="{$r[image]}" width="90" height="60" alt="{$r[catname]}" /></a>
-                <!--
-                {php $k=string2array($r['setting'])}
-                <strong><a href="{$r[url]}" target="_blank" title="{$k[meta_title]}" {title_style($r[style])}>{str_cut($k[meta_title],28)}</a></strong><br />{str_cut($k[meta_description],100)}
-                -->
                 {loop $info $v}
                 <strong><a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>{str_cut($v['title'],28)}</a></strong><br />{str_cut($v['description'],100,'...')}
                 {/loop}
-              </p>
-                {/pc}                
+                  </p>
+                {/pc}  
+              
                 <div class="bk15 hr"></div>
                 {pc:content action="lists" catid="$r[catid]" num="10" order="id DESC" return="info"}
                 {php $info=array_splice($info,1)} 
@@ -63,7 +65,7 @@
                 </ul>
                 {/pc}
             </div>
-                <div class="cate-more"><a href="{$r[url]}" class="cate-more-icon">进入频道</a></div>
+                <div class="cate-more"><a href="{$catUrl}" class="cate-more-icon">进入频道</a></div>
         </div>
         {if $num%2==0}<div class="bk10"></div>{/if}
         {/if}
@@ -78,12 +80,12 @@
            	 <div class="content">
            	 	{pc:content action="lists" catid="$k[catid]" num="1" order="id DESC" return="info"} 
            	 	<p>
-           	 		{loop $info $v}
-                <a href="{$v[url]}" target="_blank"><img src="{thumb($v[thumb],90,0)}" width="90" height="60"/></a>
-                <strong><a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>{str_cut($v['title'],28)}</a></strong><br />{str_cut($v['description'],100,'...')}
-                {/loop}
-              </p>
-              {/pc} 
+           	 	{loop $info $v}
+                                     <a href="{$v[url]}" target="_blank"><img src="{thumb($v[thumb],90,0)}" width="90" height="60"/></a>
+                                     <strong><a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>{str_cut($v['title'],28)}</a></strong><br />{str_cut($v['description'],100,'...')}
+                                    {/loop}
+                                      </p>
+          {/pc} 
               <div class="bk15 hr"></div>
               {pc:content action="lists" catid="$k[catid]" num="10" order="id DESC" return="info"}
                 {php $info=array_splice($info,1)} 
@@ -101,6 +103,21 @@
 		{/loop}
     </div>
     <div class="col-auto">
+    	<div class="ads-right">
+        <a data-type="2" biz-keyword="养猪设备器械" data-tmpl="220x290" data-tmplid="9" data-rd="2" data-style="2" data-border="1" href="#"></a>
+    	</div>
+    	<div class="ads-right">
+        <a data-type="2" biz-keyword="养猪兽药" data-tmpl="220x290" data-tmplid="9" data-rd="2" data-style="2" data-border="1" href="#"></a>
+    	</div>
+    	<div class="ads-right">
+        <a data-type="2" biz-keyword="养猪饲料" data-tmpl="220x290" data-tmplid="9" data-rd="2" data-style="2" data-border="1" href="#"></a>
+    	</div>
+    	<div class="ads-right">
+        <a data-type="2" biz-keyword="养猪技术" data-tmpl="220x290" data-tmplid="9" data-rd="2" data-style="2" data-border="1" href="#"></a>
+    	</div>
+    	<div class="ads-right">
+    	  <a data-type="3" data-tmpl="220x290" data-tmplid="29" data-rd="2" data-style="2" data-border="1" href="#"></a>
+    	</div>
     <!--
     	<div class="box">
         	 <h5 class="title-2">公告<a href="" class="more">&nbsp;</a></h5>
@@ -174,7 +191,7 @@
 	
 	<div class="box blogroll ylink">
     	<h5><!--<a href="{APP_PATH}index.php?m=link&siteid={$siteid}" hidefocus="true" class="rt">更多>></a>-->友情链接<a href="{APP_PATH}index.php?m=link&c=index&a=register&siteid={$siteid}" class="red">申请链接</a></h5>
-        <div class="bk10"></div>
+        <!--<div class="bk10"></div>-->
 	<ul class="colli imgul">
         {pc:link  action="type_list" siteid="$siteid" linktype="1" order="listorder DESC" num="8" return="pic_link"}
         {loop $pic_link $v}
@@ -198,7 +215,7 @@
 </div>
 <script type="text/javascript"> 
 $(function(){
-	new slide("#main-slide","cur",310,260,1);//焦点图
+	new slide("#main-slide","cur",310,260,1);//焦点??
 	new SwapTab(".SwapTab","span",".tab-content","ul","fb");//排行TAB
 })
 </script>

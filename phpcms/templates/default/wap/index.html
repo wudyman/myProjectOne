@@ -16,7 +16,7 @@
 		</h2>
 		<div>
 		{loop $info $i}
-			<a href="{show_url($i[catid],$i[id])}">{str_cut($i['title'],26,'')}</a><br/>
+			<a href="{show_url($i[catid],$i[id])}">{str_cut($i['title'],32,'...')}</a><br/>
 		{/loop}
 		</div>
 	{/pc}

@@ -64,6 +64,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .header .subnav{padding-left:22px; border-left:0px solid #d2dfed;border-right:0px solid #d2dfed;background-position: left -33px;background-repeat: repeat-x; height:28px; line-height:28px}
 .header .subnav a{ /*color:#666666*/}
 .header .subnav span{ padding:0 2px; color:#c8d8e9;}
+.header .logo-phone{float:right;padding:0 5px 5px 0}
 /* main style */
 .main{}
 .main .col-left{width:700px; margin-right:10px}
@@ -369,7 +370,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .ads .col-auto div.left{float:left; background:#dce2ea; width:20px; margin-right:8px; text-align:center; height:83px; padding-top:5px}
 .ads .col-auto div.right{overflow:hidden; }
 
-.ads-right{}
+.ads-right{padding:0 0 0 20px}
 .duilian{top:150px;position:absolute; width:172px; overflow:hidden; display:none;}
 .duilian_left{ left:6px;}
 .duilian_right{right:6px;}

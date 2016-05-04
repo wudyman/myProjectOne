@@ -106,7 +106,7 @@ class index {
 		extract($data);
 			
 		$typeid = $type_tmp;
-
+             
 	    if(strpos($content, '[/page]')!==false) {
 			$content = preg_replace("|\[page\](.*)\[/page\]|U", '', $content);
 		} elseif (strpos($content, '[page]')!==false) {
@@ -118,6 +118,7 @@ class index {
 		$contentpage = pc_base::load_app_class('contentpage','content');
 		$content = $contentpage->get_data($content,$maxcharperpage);
 		$isshow = 1;
+                 		
 		if($pictureurls) {
 			$pictureurl = pic_pages($pictureurls);
 			$isshow = 0;			
@@ -158,7 +159,6 @@ class index {
 				}		
 			}			
 		}
-		
 		//进行自动分页处理		
 		$CONTENT_POS = strpos($content, '[page]');
 		if($CONTENT_POS !== false) {
@@ -201,8 +201,9 @@ class index {
 		        }
 	    	}			
 		}
-				
-		$content = content_strip(wml_strip($content));	
+//print_r($content);//dongxw test			
+		$content = content_strip(wml_strip($content));
+                  
 		$template = $WAP_SETTING['show_template'] ? $WAP_SETTING['show_template'] : 'show';
 		include template('wap', $template);
 	}

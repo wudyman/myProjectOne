@@ -7,7 +7,7 @@
 {/pc}
 <a href="{APP_PATH}index.php?m=link" target="_blank">友情链接</a>
 <br />
-Powered by <strong><a href="http://www.shuzhubao.com" target="_blank">数猪宝</a></strong>  &copy; {date('Y', SYS_TIME)} <a href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备16003534号</a><img src="{IMG_PATH}copyright.gif"/> {tjcode()}{php echo runhook('glogal_footer')}
+Powered by <strong>格润家科技有限公司</strong>  &copy; {date('Y', SYS_TIME)} <a href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备16003534号</a><img src="{IMG_PATH}copyright.gif"/> {tjcode()}{php echo runhook('glogal_footer')}
 <script src="http://s4.cnzz.com/z_stat.php?id=1257697853&web_id=1257697853" language="JavaScript"></script>
 </p>
 </div>
@@ -31,6 +31,43 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-
+<!--
+<script>
+function browserRedirect(){
+var sUserAgent = navigator.userAgent.toLowerCase();
+var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+var bIsAndroid = sUserAgent.match(/android/i) == "android";
+var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+if ((bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) ){
+  window.location.href="http://m.shuzhubao.com/index.php";
+}
+}
+browserRedirect();
+</script>
+-->
+<script type="text/javascript">
+    (function(win,doc){
+        var s = doc.createElement("script"), h = doc.getElementsByTagName("head")[0];
+        if (!win.alimamatk_show) {
+            s.charset = "gbk";
+            s.async = true;
+            s.src = "http://a.alimama.cn/tkapi.js";
+            h.insertBefore(s, h.firstChild);
+        };
+        var o = {
+            pid: "mm_114293143_12912044_49576009",
+            appkey: "",
+            unid: "",
+            type: "click"
+        };
+        win.alimamatk_onload = win.alimamatk_onload || [];
+        win.alimamatk_onload.push(o);
+    })(window,document);
+</script>
 </body>
 </html>
